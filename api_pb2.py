@@ -19,10 +19,65 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\"w\n\x0c\x45mailRequest\x12\x10\n\x08to_email\x18\x01 \x01(\t\x12\x0f\n\x07to_name\x18\x02 \x01(\t\x12\x12\n\nfrom_email\x18\x03 \x01(\t\x12\x11\n\tfrom_name\x18\x04 \x01(\t\x12\x0f\n\x07subject\x18\x05 \x01(\t\x12\x0c\n\x04\x62ody\x18\x06 \x01(\x0c\"\xa7\x01\n\rEmailResponse\x12\x13\n\x0bstatus_code\x18\x01 \x01(\x03\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12\x30\n\x07headers\x18\x03 \x03(\x0b\x32\x1f.api.EmailResponse.HeadersEntry\x1a\x41\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12 \n\x05value\x18\x02 \x01(\x0b\x32\x11.api.ListOfString:\x02\x38\x01\"\x1d\n\x0cListOfString\x12\r\n\x05value\x18\x01 \x03(\t\"Z\n\x11InferImageRequest\x12\x1a\n\x06images\x18\x01 \x03(\x0b\x32\n.api.Image\x12\x12\n\nmodel_name\x18\x02 \x01(\t\x12\x15\n\rmodel_version\x18\x03 \x01(\t\"#\n\x05Image\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"7\n\x12InferImageResponse\x12!\n\x07outputs\x18\x01 \x03(\x0b\x32\x10.api.InferOutput\"?\n\x0bInferOutput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x13\n\x0bprobability\x18\x03 \x01(\x03\"F\n\nGanRequest\x12\x12\n\nmodel_name\x18\x01 \x01(\t\x12\x15\n\rmodel_version\x18\x02 \x01(\t\x12\r\n\x05\x63ount\x18\x03 \x01(\x03\")\n\x0bGanResponse\x12\x1a\n\x06images\x18\x01 \x03(\x0b\x32\n.api.Image\"\xe5\x01\n\nCheckpoint\x12-\n\x07weights\x18\x01 \x03(\x0b\x32\x1c.api.Checkpoint.WeightsEntry\x12+\n\x06\x62iases\x18\x02 \x03(\x0b\x32\x1b.api.Checkpoint.BiasesEntry\x1a=\n\x0cWeightsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.api.Variable:\x02\x38\x01\x1a<\n\x0b\x42iasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.api.Variable:\x02\x38\x01\"&\n\x08Variable\x12\x0c\n\x04\x64\x61ta\x18\x01 \x03(\x02\x12\x0c\n\x04size\x18\x02 \x03(\x03\x32}\n\x06Lambda\x12\x30\n\x05\x45mail\x12\x11.api.EmailRequest\x1a\x12.api.EmailResponse\"\x00\x12\x41\n\nInferImage\x12\x16.api.InferImageRequest\x1a\x17.api.InferImageResponse\"\x00(\x01\x32\x33\n\x03\x41pi\x12,\n\x03Gan\x12\x0f.api.GanRequest\x1a\x10.api.GanResponse\"\x00\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\"\x07\n\x05\x45mpty\"\x1d\n\x0cListOfString\x12\r\n\x05value\x18\x01 \x03(\t\"w\n\x0c\x45mailRequest\x12\x10\n\x08to_email\x18\x01 \x01(\t\x12\x0f\n\x07to_name\x18\x02 \x01(\t\x12\x12\n\nfrom_email\x18\x03 \x01(\t\x12\x11\n\tfrom_name\x18\x04 \x01(\t\x12\x0f\n\x07subject\x18\x05 \x01(\t\x12\x0c\n\x04\x62ody\x18\x06 \x01(\x0c\"\xa7\x01\n\rEmailResponse\x12\x13\n\x0bstatus_code\x18\x01 \x01(\x03\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12\x30\n\x07headers\x18\x03 \x03(\x0b\x32\x1f.api.EmailResponse.HeadersEntry\x1a\x41\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12 \n\x05value\x18\x02 \x01(\x0b\x32\x11.api.ListOfString:\x02\x38\x01\"Z\n\x11InferImageRequest\x12\x1a\n\x06images\x18\x01 \x03(\x0b\x32\n.api.Image\x12\x12\n\nmodel_name\x18\x02 \x01(\t\x12\x15\n\rmodel_version\x18\x03 \x01(\t\"#\n\x05Image\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"7\n\x12InferImageResponse\x12!\n\x07outputs\x18\x01 \x03(\x0b\x32\x10.api.InferOutput\"?\n\x0bInferOutput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x13\n\x0bprobability\x18\x03 \x01(\x03\"F\n\nGanRequest\x12\x12\n\nmodel_name\x18\x01 \x01(\t\x12\x15\n\rmodel_version\x18\x02 \x01(\t\x12\r\n\x05\x63ount\x18\x03 \x01(\x03\")\n\x0bGanResponse\x12\x1a\n\x06images\x18\x01 \x03(\x0b\x32\n.api.Image\"\xe5\x01\n\nCheckpoint\x12-\n\x07weights\x18\x01 \x03(\x0b\x32\x1c.api.Checkpoint.WeightsEntry\x12+\n\x06\x62iases\x18\x02 \x03(\x0b\x32\x1b.api.Checkpoint.BiasesEntry\x1a=\n\x0cWeightsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.api.Variable:\x02\x38\x01\x1a<\n\x0b\x42iasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.api.Variable:\x02\x38\x01\"&\n\x08Variable\x12\x0c\n\x04\x64\x61ta\x18\x01 \x03(\x02\x12\x0c\n\x04size\x18\x02 \x03(\x03\"!\n\x04\x44\x61ta\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x32\xab\x01\n\x06Lambda\x12\x30\n\x05\x45mail\x12\x11.api.EmailRequest\x1a\x12.api.EmailResponse\"\x00\x12\x41\n\nInferImage\x12\x16.api.InferImageRequest\x1a\x17.api.InferImageResponse\"\x00(\x01\x12,\n\x03Gan\x12\x0f.api.GanRequest\x1a\x10.api.GanResponse\"\x00\x30\x01\x32-\n\x07Monitor\x12\"\n\x05Query\x12\n.api.Empty\x1a\t.api.Data\"\x00\x30\x01\x62\x06proto3')
 )
 
 
+
+
+_EMPTY = _descriptor.Descriptor(
+  name='Empty',
+  full_name='api.Empty',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=18,
+  serialized_end=25,
+)
+
+
+_LISTOFSTRING = _descriptor.Descriptor(
+  name='ListOfString',
+  full_name='api.ListOfString',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.ListOfString.value', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=27,
+  serialized_end=56,
+)
 
 
 _EMAILREQUEST = _descriptor.Descriptor(
@@ -86,8 +141,8 @@ _EMAILREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18,
-  serialized_end=137,
+  serialized_start=58,
+  serialized_end=177,
 )
 
 
@@ -124,8 +179,8 @@ _EMAILRESPONSE_HEADERSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=242,
-  serialized_end=307,
+  serialized_start=282,
+  serialized_end=347,
 )
 
 _EMAILRESPONSE = _descriptor.Descriptor(
@@ -168,39 +223,8 @@ _EMAILRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=140,
-  serialized_end=307,
-)
-
-
-_LISTOFSTRING = _descriptor.Descriptor(
-  name='ListOfString',
-  full_name='api.ListOfString',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='value', full_name='api.ListOfString.value', index=0,
-      number=1, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=309,
-  serialized_end=338,
+  serialized_start=180,
+  serialized_end=347,
 )
 
 
@@ -244,8 +268,8 @@ _INFERIMAGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=340,
-  serialized_end=430,
+  serialized_start=349,
+  serialized_end=439,
 )
 
 
@@ -282,8 +306,8 @@ _IMAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=432,
-  serialized_end=467,
+  serialized_start=441,
+  serialized_end=476,
 )
 
 
@@ -313,8 +337,8 @@ _INFERIMAGERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=469,
-  serialized_end=524,
+  serialized_start=478,
+  serialized_end=533,
 )
 
 
@@ -358,8 +382,8 @@ _INFEROUTPUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=526,
-  serialized_end=589,
+  serialized_start=535,
+  serialized_end=598,
 )
 
 
@@ -403,8 +427,8 @@ _GANREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=591,
-  serialized_end=661,
+  serialized_start=600,
+  serialized_end=670,
 )
 
 
@@ -434,8 +458,8 @@ _GANRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=663,
-  serialized_end=704,
+  serialized_start=672,
+  serialized_end=713,
 )
 
 
@@ -472,8 +496,8 @@ _CHECKPOINT_WEIGHTSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=813,
-  serialized_end=874,
+  serialized_start=822,
+  serialized_end=883,
 )
 
 _CHECKPOINT_BIASESENTRY = _descriptor.Descriptor(
@@ -509,8 +533,8 @@ _CHECKPOINT_BIASESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=876,
-  serialized_end=936,
+  serialized_start=885,
+  serialized_end=945,
 )
 
 _CHECKPOINT = _descriptor.Descriptor(
@@ -546,8 +570,8 @@ _CHECKPOINT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=707,
-  serialized_end=936,
+  serialized_start=716,
+  serialized_end=945,
 )
 
 
@@ -584,8 +608,46 @@ _VARIABLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=938,
-  serialized_end=976,
+  serialized_start=947,
+  serialized_end=985,
+)
+
+
+_DATA = _descriptor.Descriptor(
+  name='Data',
+  full_name='api.Data',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='tag', full_name='api.Data.tag', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='data', full_name='api.Data.data', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=987,
+  serialized_end=1020,
 )
 
 _EMAILRESPONSE_HEADERSENTRY.fields_by_name['value'].message_type = _LISTOFSTRING
@@ -600,9 +662,10 @@ _CHECKPOINT_BIASESENTRY.fields_by_name['value'].message_type = _VARIABLE
 _CHECKPOINT_BIASESENTRY.containing_type = _CHECKPOINT
 _CHECKPOINT.fields_by_name['weights'].message_type = _CHECKPOINT_WEIGHTSENTRY
 _CHECKPOINT.fields_by_name['biases'].message_type = _CHECKPOINT_BIASESENTRY
+DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
+DESCRIPTOR.message_types_by_name['ListOfString'] = _LISTOFSTRING
 DESCRIPTOR.message_types_by_name['EmailRequest'] = _EMAILREQUEST
 DESCRIPTOR.message_types_by_name['EmailResponse'] = _EMAILRESPONSE
-DESCRIPTOR.message_types_by_name['ListOfString'] = _LISTOFSTRING
 DESCRIPTOR.message_types_by_name['InferImageRequest'] = _INFERIMAGEREQUEST
 DESCRIPTOR.message_types_by_name['Image'] = _IMAGE
 DESCRIPTOR.message_types_by_name['InferImageResponse'] = _INFERIMAGERESPONSE
@@ -611,7 +674,22 @@ DESCRIPTOR.message_types_by_name['GanRequest'] = _GANREQUEST
 DESCRIPTOR.message_types_by_name['GanResponse'] = _GANRESPONSE
 DESCRIPTOR.message_types_by_name['Checkpoint'] = _CHECKPOINT
 DESCRIPTOR.message_types_by_name['Variable'] = _VARIABLE
+DESCRIPTOR.message_types_by_name['Data'] = _DATA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), dict(
+  DESCRIPTOR = _EMPTY,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.Empty)
+  ))
+_sym_db.RegisterMessage(Empty)
+
+ListOfString = _reflection.GeneratedProtocolMessageType('ListOfString', (_message.Message,), dict(
+  DESCRIPTOR = _LISTOFSTRING,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.ListOfString)
+  ))
+_sym_db.RegisterMessage(ListOfString)
 
 EmailRequest = _reflection.GeneratedProtocolMessageType('EmailRequest', (_message.Message,), dict(
   DESCRIPTOR = _EMAILREQUEST,
@@ -634,13 +712,6 @@ EmailResponse = _reflection.GeneratedProtocolMessageType('EmailResponse', (_mess
   ))
 _sym_db.RegisterMessage(EmailResponse)
 _sym_db.RegisterMessage(EmailResponse.HeadersEntry)
-
-ListOfString = _reflection.GeneratedProtocolMessageType('ListOfString', (_message.Message,), dict(
-  DESCRIPTOR = _LISTOFSTRING,
-  __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.ListOfString)
-  ))
-_sym_db.RegisterMessage(ListOfString)
 
 InferImageRequest = _reflection.GeneratedProtocolMessageType('InferImageRequest', (_message.Message,), dict(
   DESCRIPTOR = _INFERIMAGEREQUEST,
@@ -714,6 +785,13 @@ Variable = _reflection.GeneratedProtocolMessageType('Variable', (_message.Messag
   ))
 _sym_db.RegisterMessage(Variable)
 
+Data = _reflection.GeneratedProtocolMessageType('Data', (_message.Message,), dict(
+  DESCRIPTOR = _DATA,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.Data)
+  ))
+_sym_db.RegisterMessage(Data)
+
 
 _EMAILRESPONSE_HEADERSENTRY._options = None
 _CHECKPOINT_WEIGHTSENTRY._options = None
@@ -725,8 +803,8 @@ _LAMBDA = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=978,
-  serialized_end=1103,
+  serialized_start=1023,
+  serialized_end=1194,
   methods=[
   _descriptor.MethodDescriptor(
     name='Email',
@@ -746,33 +824,42 @@ _LAMBDA = _descriptor.ServiceDescriptor(
     output_type=_INFERIMAGERESPONSE,
     serialized_options=None,
   ),
-])
-_sym_db.RegisterServiceDescriptor(_LAMBDA)
-
-DESCRIPTOR.services_by_name['Lambda'] = _LAMBDA
-
-
-_API = _descriptor.ServiceDescriptor(
-  name='Api',
-  full_name='api.Api',
-  file=DESCRIPTOR,
-  index=1,
-  serialized_options=None,
-  serialized_start=1105,
-  serialized_end=1156,
-  methods=[
   _descriptor.MethodDescriptor(
     name='Gan',
-    full_name='api.Api.Gan',
-    index=0,
+    full_name='api.Lambda.Gan',
+    index=2,
     containing_service=None,
     input_type=_GANREQUEST,
     output_type=_GANRESPONSE,
     serialized_options=None,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_API)
+_sym_db.RegisterServiceDescriptor(_LAMBDA)
 
-DESCRIPTOR.services_by_name['Api'] = _API
+DESCRIPTOR.services_by_name['Lambda'] = _LAMBDA
+
+
+_MONITOR = _descriptor.ServiceDescriptor(
+  name='Monitor',
+  full_name='api.Monitor',
+  file=DESCRIPTOR,
+  index=1,
+  serialized_options=None,
+  serialized_start=1196,
+  serialized_end=1241,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='Query',
+    full_name='api.Monitor.Query',
+    index=0,
+    containing_service=None,
+    input_type=_EMPTY,
+    output_type=_DATA,
+    serialized_options=None,
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_MONITOR)
+
+DESCRIPTOR.services_by_name['Monitor'] = _MONITOR
 
 # @@protoc_insertion_point(module_scope)

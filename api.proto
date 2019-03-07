@@ -2,12 +2,29 @@ syntax = "proto3";
 
 package api;
 
-// Api service is a provider of various lambda services
+// Lambda service is a provider of various lambda services
 service Lambda {
     // Email service sends email
     rpc Email(EmailRequest) returns (EmailResponse) {}
     // InferImage applies trained model on input image for inferring labels
     rpc InferImage(stream InferImageRequest) returns (InferImageResponse) {}
+    // GAN generator
+    rpc Gan(GanRequest) returns (stream GanResponse) {}
+}
+
+// Monitor service is for clients to request monitor data from the server.
+// Server responds by sending a streaming data.
+service Monitor {
+    rpc Query(Empty) returns (stream Data) {}
+}
+
+// Server sends acknowledgement
+message Empty {
+}
+
+// ListOfString is a list of strings
+message ListOfString {
+    repeated string value = 1;
 }
 
 // EmailRequest is the request to send email. This data is streamed from client
@@ -21,16 +38,11 @@ message EmailRequest {
     bytes body = 6;
 }
 
-// SendResponse is the response from the server after email is sent.
+// EmailResponse is the response from the server after email is sent.
 message EmailResponse {
     int64 status_code = 1;
     string body = 2;
     map<string, ListOfString> headers = 3;
-}
-
-// ListOfString is a list of strings
-message ListOfString {
-    repeated string value = 1;
 }
 
 // InferImageRequest takes a list of images (as bytes) and model and label file path URIs.
@@ -63,12 +75,6 @@ message InferOutput {
     int64 probability = 3;
 }
 
-// Api service is a provider of various lambda services
-service Api {
-    // GAN generator
-    rpc Gan(GanRequest) returns (stream GanResponse) {}
-}
-
 message GanRequest {
     // Model name.
     // Model files (.pb) exist in a folder by this name in
@@ -98,4 +104,10 @@ message Checkpoint {
 message Variable {
     repeated float data = 1;
     repeated int64 size = 2;
+}
+
+// Data is basically just a byte buffer.
+message Data {
+    string tag = 1;
+    bytes data = 2;
 }
