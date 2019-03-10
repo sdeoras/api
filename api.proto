@@ -10,6 +10,8 @@ service Lambda {
     rpc InferImage(stream InferImageRequest) returns (InferImageResponse) {}
     // GAN generator
     rpc Gan(GanRequest) returns (stream GanResponse) {}
+    // Gallery Display of images
+    rpc Gallery(GalleryRequest) returns (GalleryResponse) {}
 }
 
 // Monitor service is for clients to request monitor data from the server.
@@ -111,3 +113,21 @@ message Data {
     string tag = 1;
     bytes data = 2;
 }
+
+// GalleryRequest is a request to gallery maker. It contains filenames in object store
+// that are publicly available.
+message GalleryRequest {
+    repeated GalleryItem gallery_items = 1;
+}
+
+// GalleryItem is a individual items for gallery presentation
+message GalleryItem {
+    int64 id = 1;
+    string file_name = 2;
+    string title = 3;
+    string caption = 4;
+    string bucket_name = 5;
+}
+
+// GalleryResponse is an empty response.
+message GalleryResponse {}
