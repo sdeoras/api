@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\"\x07\n\x05\x45mpty\"\x1d\n\x0cListOfString\x12\r\n\x05value\x18\x01 \x03(\t\"w\n\x0c\x45mailRequest\x12\x10\n\x08to_email\x18\x01 \x01(\t\x12\x0f\n\x07to_name\x18\x02 \x01(\t\x12\x12\n\nfrom_email\x18\x03 \x01(\t\x12\x11\n\tfrom_name\x18\x04 \x01(\t\x12\x0f\n\x07subject\x18\x05 \x01(\t\x12\x0c\n\x04\x62ody\x18\x06 \x01(\x0c\"\xa7\x01\n\rEmailResponse\x12\x13\n\x0bstatus_code\x18\x01 \x01(\x03\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12\x30\n\x07headers\x18\x03 \x03(\x0b\x32\x1f.api.EmailResponse.HeadersEntry\x1a\x41\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12 \n\x05value\x18\x02 \x01(\x0b\x32\x11.api.ListOfString:\x02\x38\x01\"Z\n\x11InferImageRequest\x12\x1a\n\x06images\x18\x01 \x03(\x0b\x32\n.api.Image\x12\x12\n\nmodel_name\x18\x02 \x01(\t\x12\x15\n\rmodel_version\x18\x03 \x01(\t\"#\n\x05Image\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"7\n\x12InferImageResponse\x12!\n\x07outputs\x18\x01 \x03(\x0b\x32\x10.api.InferOutput\"?\n\x0bInferOutput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x13\n\x0bprobability\x18\x03 \x01(\x03\"F\n\nGanRequest\x12\x12\n\nmodel_name\x18\x01 \x01(\t\x12\x15\n\rmodel_version\x18\x02 \x01(\t\x12\r\n\x05\x63ount\x18\x03 \x01(\x03\")\n\x0bGanResponse\x12\x1a\n\x06images\x18\x01 \x03(\x0b\x32\n.api.Image\"\xe5\x01\n\nCheckpoint\x12-\n\x07weights\x18\x01 \x03(\x0b\x32\x1c.api.Checkpoint.WeightsEntry\x12+\n\x06\x62iases\x18\x02 \x03(\x0b\x32\x1b.api.Checkpoint.BiasesEntry\x1a=\n\x0cWeightsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.api.Variable:\x02\x38\x01\x1a<\n\x0b\x42iasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.api.Variable:\x02\x38\x01\"&\n\x08Variable\x12\x0c\n\x04\x64\x61ta\x18\x01 \x03(\x02\x12\x0c\n\x04size\x18\x02 \x03(\x03\"!\n\x04\x44\x61ta\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x32\xab\x01\n\x06Lambda\x12\x30\n\x05\x45mail\x12\x11.api.EmailRequest\x1a\x12.api.EmailResponse\"\x00\x12\x41\n\nInferImage\x12\x16.api.InferImageRequest\x1a\x17.api.InferImageResponse\"\x00(\x01\x12,\n\x03Gan\x12\x0f.api.GanRequest\x1a\x10.api.GanResponse\"\x00\x30\x01\x32-\n\x07Monitor\x12\"\n\x05Query\x12\n.api.Empty\x1a\t.api.Data\"\x00\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\"\x07\n\x05\x45mpty\"\x1d\n\x0cListOfString\x12\r\n\x05value\x18\x01 \x03(\t\"w\n\x0c\x45mailRequest\x12\x10\n\x08to_email\x18\x01 \x01(\t\x12\x0f\n\x07to_name\x18\x02 \x01(\t\x12\x12\n\nfrom_email\x18\x03 \x01(\t\x12\x11\n\tfrom_name\x18\x04 \x01(\t\x12\x0f\n\x07subject\x18\x05 \x01(\t\x12\x0c\n\x04\x62ody\x18\x06 \x01(\x0c\"\xa7\x01\n\rEmailResponse\x12\x13\n\x0bstatus_code\x18\x01 \x01(\x03\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12\x30\n\x07headers\x18\x03 \x03(\x0b\x32\x1f.api.EmailResponse.HeadersEntry\x1a\x41\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12 \n\x05value\x18\x02 \x01(\x0b\x32\x11.api.ListOfString:\x02\x38\x01\"Z\n\x11InferImageRequest\x12\x1a\n\x06images\x18\x01 \x03(\x0b\x32\n.api.Image\x12\x12\n\nmodel_name\x18\x02 \x01(\t\x12\x15\n\rmodel_version\x18\x03 \x01(\t\"#\n\x05Image\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"7\n\x12InferImageResponse\x12!\n\x07outputs\x18\x01 \x03(\x0b\x32\x10.api.InferOutput\"?\n\x0bInferOutput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x13\n\x0bprobability\x18\x03 \x01(\x03\"F\n\nGanRequest\x12\x12\n\nmodel_name\x18\x01 \x01(\t\x12\x15\n\rmodel_version\x18\x02 \x01(\t\x12\r\n\x05\x63ount\x18\x03 \x01(\x03\")\n\x0bGanResponse\x12\x1a\n\x06images\x18\x01 \x03(\x0b\x32\n.api.Image\"\xe5\x01\n\nCheckpoint\x12-\n\x07weights\x18\x01 \x03(\x0b\x32\x1c.api.Checkpoint.WeightsEntry\x12+\n\x06\x62iases\x18\x02 \x03(\x0b\x32\x1b.api.Checkpoint.BiasesEntry\x1a=\n\x0cWeightsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.api.Variable:\x02\x38\x01\x1a<\n\x0b\x42iasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.api.Variable:\x02\x38\x01\"&\n\x08Variable\x12\x0c\n\x04\x64\x61ta\x18\x01 \x03(\x02\x12\x0c\n\x04size\x18\x02 \x03(\x03\"!\n\x04\x44\x61ta\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"9\n\x0eGalleryRequest\x12\'\n\rgallery_items\x18\x01 \x03(\x0b\x32\x10.api.GalleryItem\"a\n\x0bGalleryItem\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x11\n\tfile_name\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0f\n\x07\x63\x61ption\x18\x04 \x01(\t\x12\x13\n\x0b\x62ucket_name\x18\x05 \x01(\t\"\x11\n\x0fGalleryResponse2\xe3\x01\n\x06Lambda\x12\x30\n\x05\x45mail\x12\x11.api.EmailRequest\x1a\x12.api.EmailResponse\"\x00\x12\x41\n\nInferImage\x12\x16.api.InferImageRequest\x1a\x17.api.InferImageResponse\"\x00(\x01\x12,\n\x03Gan\x12\x0f.api.GanRequest\x1a\x10.api.GanResponse\"\x00\x30\x01\x12\x36\n\x07Gallery\x12\x13.api.GalleryRequest\x1a\x14.api.GalleryResponse\"\x00\x32-\n\x07Monitor\x12\"\n\x05Query\x12\n.api.Empty\x1a\t.api.Data\"\x00\x30\x01\x62\x06proto3')
 )
 
 
@@ -650,6 +650,120 @@ _DATA = _descriptor.Descriptor(
   serialized_end=1020,
 )
 
+
+_GALLERYREQUEST = _descriptor.Descriptor(
+  name='GalleryRequest',
+  full_name='api.GalleryRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='gallery_items', full_name='api.GalleryRequest.gallery_items', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1022,
+  serialized_end=1079,
+)
+
+
+_GALLERYITEM = _descriptor.Descriptor(
+  name='GalleryItem',
+  full_name='api.GalleryItem',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='api.GalleryItem.id', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='file_name', full_name='api.GalleryItem.file_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='title', full_name='api.GalleryItem.title', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='caption', full_name='api.GalleryItem.caption', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='bucket_name', full_name='api.GalleryItem.bucket_name', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1081,
+  serialized_end=1178,
+)
+
+
+_GALLERYRESPONSE = _descriptor.Descriptor(
+  name='GalleryResponse',
+  full_name='api.GalleryResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1180,
+  serialized_end=1197,
+)
+
 _EMAILRESPONSE_HEADERSENTRY.fields_by_name['value'].message_type = _LISTOFSTRING
 _EMAILRESPONSE_HEADERSENTRY.containing_type = _EMAILRESPONSE
 _EMAILRESPONSE.fields_by_name['headers'].message_type = _EMAILRESPONSE_HEADERSENTRY
@@ -662,6 +776,7 @@ _CHECKPOINT_BIASESENTRY.fields_by_name['value'].message_type = _VARIABLE
 _CHECKPOINT_BIASESENTRY.containing_type = _CHECKPOINT
 _CHECKPOINT.fields_by_name['weights'].message_type = _CHECKPOINT_WEIGHTSENTRY
 _CHECKPOINT.fields_by_name['biases'].message_type = _CHECKPOINT_BIASESENTRY
+_GALLERYREQUEST.fields_by_name['gallery_items'].message_type = _GALLERYITEM
 DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
 DESCRIPTOR.message_types_by_name['ListOfString'] = _LISTOFSTRING
 DESCRIPTOR.message_types_by_name['EmailRequest'] = _EMAILREQUEST
@@ -675,6 +790,9 @@ DESCRIPTOR.message_types_by_name['GanResponse'] = _GANRESPONSE
 DESCRIPTOR.message_types_by_name['Checkpoint'] = _CHECKPOINT
 DESCRIPTOR.message_types_by_name['Variable'] = _VARIABLE
 DESCRIPTOR.message_types_by_name['Data'] = _DATA
+DESCRIPTOR.message_types_by_name['GalleryRequest'] = _GALLERYREQUEST
+DESCRIPTOR.message_types_by_name['GalleryItem'] = _GALLERYITEM
+DESCRIPTOR.message_types_by_name['GalleryResponse'] = _GALLERYRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), dict(
@@ -792,6 +910,27 @@ Data = _reflection.GeneratedProtocolMessageType('Data', (_message.Message,), dic
   ))
 _sym_db.RegisterMessage(Data)
 
+GalleryRequest = _reflection.GeneratedProtocolMessageType('GalleryRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GALLERYREQUEST,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.GalleryRequest)
+  ))
+_sym_db.RegisterMessage(GalleryRequest)
+
+GalleryItem = _reflection.GeneratedProtocolMessageType('GalleryItem', (_message.Message,), dict(
+  DESCRIPTOR = _GALLERYITEM,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.GalleryItem)
+  ))
+_sym_db.RegisterMessage(GalleryItem)
+
+GalleryResponse = _reflection.GeneratedProtocolMessageType('GalleryResponse', (_message.Message,), dict(
+  DESCRIPTOR = _GALLERYRESPONSE,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.GalleryResponse)
+  ))
+_sym_db.RegisterMessage(GalleryResponse)
+
 
 _EMAILRESPONSE_HEADERSENTRY._options = None
 _CHECKPOINT_WEIGHTSENTRY._options = None
@@ -803,8 +942,8 @@ _LAMBDA = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1023,
-  serialized_end=1194,
+  serialized_start=1200,
+  serialized_end=1427,
   methods=[
   _descriptor.MethodDescriptor(
     name='Email',
@@ -833,6 +972,15 @@ _LAMBDA = _descriptor.ServiceDescriptor(
     output_type=_GANRESPONSE,
     serialized_options=None,
   ),
+  _descriptor.MethodDescriptor(
+    name='Gallery',
+    full_name='api.Lambda.Gallery',
+    index=3,
+    containing_service=None,
+    input_type=_GALLERYREQUEST,
+    output_type=_GALLERYRESPONSE,
+    serialized_options=None,
+  ),
 ])
 _sym_db.RegisterServiceDescriptor(_LAMBDA)
 
@@ -845,8 +993,8 @@ _MONITOR = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=1196,
-  serialized_end=1241,
+  serialized_start=1429,
+  serialized_end=1474,
   methods=[
   _descriptor.MethodDescriptor(
     name='Query',
