@@ -12,6 +12,8 @@ service Lambda {
     rpc Gan(GanRequest) returns (stream GanResponse) {}
     // Gallery Display of images
     rpc Gallery(GalleryRequest) returns (GalleryResponse) {}
+    // Config fetches config parameters
+    rpc Config(ConfigRequest) returns (ConfigResponse) {}
 }
 
 // Monitor service is for clients to request monitor data from the server.
@@ -131,3 +133,54 @@ message GalleryItem {
 
 // GalleryResponse is an empty response.
 message GalleryResponse {}
+
+// ConfigRequest is a message used to get config parameters
+message ConfigRequest {}
+
+// ConfigResponse is a set of config parameters for lambda functions.
+// Currently these are all lumped into one struct but this will
+// get divided into sub structs later on.
+message ConfigResponse {
+    // name of lambda function
+    string func_name = 1;
+    // code location of lambda function
+    string code_location = 2;
+    // domain of lambda function
+    string domain = 3;
+    // bucket name to use
+    string bucket_name = 4;
+
+    // oauth request to send to various providers
+    OAuthRequest oauth = 5;
+
+    // jwt secret passphrase
+    string jwt_secret = 6;
+}
+
+// OAuthRequest is a collection of all supported oauth providers
+message OAuthRequest {
+    // Google as oauth provider
+    GoogleOAuthRequest google = 1;
+}
+
+// GoogleOAuthRequest is used to send oauth request to google oauth provider
+message GoogleOAuthRequest {
+    // client id for oauth2
+    string client_id = 1;
+    // client secret for oauth2
+    string client_secret = 2;
+}
+
+// GoogleOAuthResponse is used to deserialize the response from google oauth provider
+message GoogleOAuthResponse {
+    // id of the user
+	string id = 1;
+    // email of the user
+    string email = 2;
+    // verified email of the user
+    string verified_email = 3;
+    // link of user public profile
+    string link = 4;
+    // link to user public picture
+    string picture = 5;
+}
