@@ -17,13 +17,28 @@ const (
 
 type server struct{}
 
-// Email service does nothing at the moment.
+// todo: implement this method
 func (s *server) Email(ctx context.Context, in *EmailRequest) (*EmailResponse, error) {
 	return nil, nil
 }
 
+// todo: implement this method
+func (s *server) Gan(*GanRequest, Lambda_GanServer) error {
+	return nil
+}
+
+// todo: implement this method
+func (s *server) Gallery(context.Context, *GalleryRequest) (*GalleryResponse, error) {
+	return nil, nil
+}
+
+// todo: implement this method
+func (s *server) Config(context.Context, *ConfigRequest) (*ConfigResponse, error) {
+	return nil, nil
+}
+
 // InferImage receives streaming input and build output sending it back on the stream.
-func (s *server) InferImage(stream Api_InferImageServer) error {
+func (s *server) InferImage(stream Lambda_InferImageServer) error {
 	request := new(InferImageRequest)
 	request.Images = make([]*Image, 0, 0)
 
@@ -37,8 +52,7 @@ func (s *server) InferImage(stream Api_InferImageServer) error {
 			return err
 		}
 
-		request.LabelPath = in.LabelPath
-		request.ModelPath = in.ModelPath
+		request.ModelName = in.ModelName
 		request.Images = append(request.Images, in.Images...)
 	}
 
@@ -60,7 +74,7 @@ func newServer() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 	s := grpc.NewServer()
-	RegisterApiServer(s, &server{})
+	RegisterLambdaServer(s, &server{})
 
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
@@ -77,7 +91,7 @@ func TestApiClient_InferImage(t *testing.T) {
 	}
 	defer conn.Close()
 
-	client := NewApiClient(conn)
+	client := NewLambdaClient(conn)
 
 	stream, err := client.InferImage(context.Background())
 	if err != nil {
@@ -88,8 +102,8 @@ func TestApiClient_InferImage(t *testing.T) {
 	for i := 0; i < 3; i++ {
 		in := new(InferImageRequest)
 		in.Images = make([]*Image, 1)
-		in.ModelPath = "modelPath"
-		in.LabelPath = "labelPath"
+		in.ModelName = "myModel"
+		in.ModelVersion = "v1"
 
 		in.Images[0] = new(Image)
 		in.Images[0].Name = fmt.Sprintf("image-%d", i)
