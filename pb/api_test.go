@@ -1,4 +1,4 @@
-package api
+package pb
 
 import (
 	"context"

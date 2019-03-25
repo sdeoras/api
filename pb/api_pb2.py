@@ -16,10 +16,10 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='api.proto',
-  package='api',
+  package='pb',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\"\x07\n\x05\x45mpty\"\x1d\n\x0cListOfString\x12\r\n\x05value\x18\x01 \x03(\t\"w\n\x0c\x45mailRequest\x12\x10\n\x08to_email\x18\x01 \x01(\t\x12\x0f\n\x07to_name\x18\x02 \x01(\t\x12\x12\n\nfrom_email\x18\x03 \x01(\t\x12\x11\n\tfrom_name\x18\x04 \x01(\t\x12\x0f\n\x07subject\x18\x05 \x01(\t\x12\x0c\n\x04\x62ody\x18\x06 \x01(\x0c\"\xa7\x01\n\rEmailResponse\x12\x13\n\x0bstatus_code\x18\x01 \x01(\x03\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12\x30\n\x07headers\x18\x03 \x03(\x0b\x32\x1f.api.EmailResponse.HeadersEntry\x1a\x41\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12 \n\x05value\x18\x02 \x01(\x0b\x32\x11.api.ListOfString:\x02\x38\x01\"Z\n\x11InferImageRequest\x12\x1a\n\x06images\x18\x01 \x03(\x0b\x32\n.api.Image\x12\x12\n\nmodel_name\x18\x02 \x01(\t\x12\x15\n\rmodel_version\x18\x03 \x01(\t\"#\n\x05Image\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"7\n\x12InferImageResponse\x12!\n\x07outputs\x18\x01 \x03(\x0b\x32\x10.api.InferOutput\"?\n\x0bInferOutput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x13\n\x0bprobability\x18\x03 \x01(\x03\"F\n\nGanRequest\x12\x12\n\nmodel_name\x18\x01 \x01(\t\x12\x15\n\rmodel_version\x18\x02 \x01(\t\x12\r\n\x05\x63ount\x18\x03 \x01(\x03\")\n\x0bGanResponse\x12\x1a\n\x06images\x18\x01 \x03(\x0b\x32\n.api.Image\"\xe5\x01\n\nCheckpoint\x12-\n\x07weights\x18\x01 \x03(\x0b\x32\x1c.api.Checkpoint.WeightsEntry\x12+\n\x06\x62iases\x18\x02 \x03(\x0b\x32\x1b.api.Checkpoint.BiasesEntry\x1a=\n\x0cWeightsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.api.Variable:\x02\x38\x01\x1a<\n\x0b\x42iasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.api.Variable:\x02\x38\x01\"&\n\x08Variable\x12\x0c\n\x04\x64\x61ta\x18\x01 \x03(\x02\x12\x0c\n\x04size\x18\x02 \x03(\x03\"!\n\x04\x44\x61ta\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"9\n\x0eGalleryRequest\x12\'\n\rgallery_items\x18\x01 \x03(\x0b\x32\x10.api.GalleryItem\"a\n\x0bGalleryItem\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x11\n\tfile_name\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0f\n\x07\x63\x61ption\x18\x04 \x01(\t\x12\x13\n\x0b\x62ucket_name\x18\x05 \x01(\t\"\x11\n\x0fGalleryResponse\"\x0f\n\rConfigRequest\"\x95\x01\n\x0e\x43onfigResponse\x12\x11\n\tfunc_name\x18\x01 \x01(\t\x12\x15\n\rcode_location\x18\x02 \x01(\t\x12\x0e\n\x06\x64omain\x18\x03 \x01(\t\x12\x13\n\x0b\x62ucket_name\x18\x04 \x01(\t\x12 \n\x05oauth\x18\x05 \x01(\x0b\x32\x11.api.OAuthRequest\x12\x12\n\njwt_secret\x18\x06 \x01(\t\"7\n\x0cOAuthRequest\x12\'\n\x06google\x18\x01 \x01(\x0b\x32\x17.api.GoogleOAuthRequest\">\n\x12GoogleOAuthRequest\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x15\n\rclient_secret\x18\x02 \x01(\t\"g\n\x13GoogleOAuthResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x16\n\x0everified_email\x18\x03 \x01(\t\x12\x0c\n\x04link\x18\x04 \x01(\t\x12\x0f\n\x07picture\x18\x05 \x01(\t2\x98\x02\n\x06Lambda\x12\x30\n\x05\x45mail\x12\x11.api.EmailRequest\x1a\x12.api.EmailResponse\"\x00\x12\x41\n\nInferImage\x12\x16.api.InferImageRequest\x1a\x17.api.InferImageResponse\"\x00(\x01\x12,\n\x03Gan\x12\x0f.api.GanRequest\x1a\x10.api.GanResponse\"\x00\x30\x01\x12\x36\n\x07Gallery\x12\x13.api.GalleryRequest\x1a\x14.api.GalleryResponse\"\x00\x12\x33\n\x06\x43onfig\x12\x12.api.ConfigRequest\x1a\x13.api.ConfigResponse\"\x00\x32-\n\x07Monitor\x12\"\n\x05Query\x12\n.api.Empty\x1a\t.api.Data\"\x00\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\tapi.proto\x12\x02pb\"\x07\n\x05\x45mpty\"\x1d\n\x0cListOfString\x12\r\n\x05value\x18\x01 \x03(\t\"w\n\x0c\x45mailRequest\x12\x10\n\x08to_email\x18\x01 \x01(\t\x12\x0f\n\x07to_name\x18\x02 \x01(\t\x12\x12\n\nfrom_email\x18\x03 \x01(\t\x12\x11\n\tfrom_name\x18\x04 \x01(\t\x12\x0f\n\x07subject\x18\x05 \x01(\t\x12\x0c\n\x04\x62ody\x18\x06 \x01(\x0c\"\xa5\x01\n\rEmailResponse\x12\x13\n\x0bstatus_code\x18\x01 \x01(\x03\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12/\n\x07headers\x18\x03 \x03(\x0b\x32\x1e.pb.EmailResponse.HeadersEntry\x1a@\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1f\n\x05value\x18\x02 \x01(\x0b\x32\x10.pb.ListOfString:\x02\x38\x01\"Y\n\x11InferImageRequest\x12\x19\n\x06images\x18\x01 \x03(\x0b\x32\t.pb.Image\x12\x12\n\nmodel_name\x18\x02 \x01(\t\x12\x15\n\rmodel_version\x18\x03 \x01(\t\"#\n\x05Image\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"6\n\x12InferImageResponse\x12 \n\x07outputs\x18\x01 \x03(\x0b\x32\x0f.pb.InferOutput\"?\n\x0bInferOutput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x13\n\x0bprobability\x18\x03 \x01(\x03\"F\n\nGanRequest\x12\x12\n\nmodel_name\x18\x01 \x01(\t\x12\x15\n\rmodel_version\x18\x02 \x01(\t\x12\r\n\x05\x63ount\x18\x03 \x01(\x03\"(\n\x0bGanResponse\x12\x19\n\x06images\x18\x01 \x03(\x0b\x32\t.pb.Image\"\xe1\x01\n\nCheckpoint\x12,\n\x07weights\x18\x01 \x03(\x0b\x32\x1b.pb.Checkpoint.WeightsEntry\x12*\n\x06\x62iases\x18\x02 \x03(\x0b\x32\x1a.pb.Checkpoint.BiasesEntry\x1a<\n\x0cWeightsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.pb.Variable:\x02\x38\x01\x1a;\n\x0b\x42iasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.pb.Variable:\x02\x38\x01\"&\n\x08Variable\x12\x0c\n\x04\x64\x61ta\x18\x01 \x03(\x02\x12\x0c\n\x04size\x18\x02 \x03(\x03\"!\n\x04\x44\x61ta\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"8\n\x0eGalleryRequest\x12&\n\rgallery_items\x18\x01 \x03(\x0b\x32\x0f.pb.GalleryItem\"a\n\x0bGalleryItem\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x11\n\tfile_name\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0f\n\x07\x63\x61ption\x18\x04 \x01(\t\x12\x13\n\x0b\x62ucket_name\x18\x05 \x01(\t\"\x11\n\x0fGalleryResponse\"\x0f\n\rConfigRequest\"\x94\x01\n\x0e\x43onfigResponse\x12\x11\n\tfunc_name\x18\x01 \x01(\t\x12\x15\n\rcode_location\x18\x02 \x01(\t\x12\x0e\n\x06\x64omain\x18\x03 \x01(\t\x12\x13\n\x0b\x62ucket_name\x18\x04 \x01(\t\x12\x1f\n\x05oauth\x18\x05 \x01(\x0b\x32\x10.pb.OAuthRequest\x12\x12\n\njwt_secret\x18\x06 \x01(\t\"6\n\x0cOAuthRequest\x12&\n\x06google\x18\x01 \x01(\x0b\x32\x16.pb.GoogleOAuthRequest\">\n\x12GoogleOAuthRequest\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x15\n\rclient_secret\x18\x02 \x01(\t\"g\n\x13GoogleOAuthResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x16\n\x0everified_email\x18\x03 \x01(\t\x12\x0c\n\x04link\x18\x04 \x01(\t\x12\x0f\n\x07picture\x18\x05 \x01(\t2\x8e\x02\n\x06Lambda\x12.\n\x05\x45mail\x12\x10.pb.EmailRequest\x1a\x11.pb.EmailResponse\"\x00\x12?\n\nInferImage\x12\x15.pb.InferImageRequest\x1a\x16.pb.InferImageResponse\"\x00(\x01\x12*\n\x03Gan\x12\x0e.pb.GanRequest\x1a\x0f.pb.GanResponse\"\x00\x30\x01\x12\x34\n\x07Gallery\x12\x12.pb.GalleryRequest\x1a\x13.pb.GalleryResponse\"\x00\x12\x31\n\x06\x43onfig\x12\x11.pb.ConfigRequest\x1a\x12.pb.ConfigResponse\"\x00\x32+\n\x07Monitor\x12 \n\x05Query\x12\t.pb.Empty\x1a\x08.pb.Data\"\x00\x30\x01\x62\x06proto3')
 )
 
 
@@ -27,7 +27,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _EMPTY = _descriptor.Descriptor(
   name='Empty',
-  full_name='api.Empty',
+  full_name='pb.Empty',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -44,20 +44,20 @@ _EMPTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18,
-  serialized_end=25,
+  serialized_start=17,
+  serialized_end=24,
 )
 
 
 _LISTOFSTRING = _descriptor.Descriptor(
   name='ListOfString',
-  full_name='api.ListOfString',
+  full_name='pb.ListOfString',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='api.ListOfString.value', index=0,
+      name='value', full_name='pb.ListOfString.value', index=0,
       number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -75,55 +75,55 @@ _LISTOFSTRING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27,
-  serialized_end=56,
+  serialized_start=26,
+  serialized_end=55,
 )
 
 
 _EMAILREQUEST = _descriptor.Descriptor(
   name='EmailRequest',
-  full_name='api.EmailRequest',
+  full_name='pb.EmailRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='to_email', full_name='api.EmailRequest.to_email', index=0,
+      name='to_email', full_name='pb.EmailRequest.to_email', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='to_name', full_name='api.EmailRequest.to_name', index=1,
+      name='to_name', full_name='pb.EmailRequest.to_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='from_email', full_name='api.EmailRequest.from_email', index=2,
+      name='from_email', full_name='pb.EmailRequest.from_email', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='from_name', full_name='api.EmailRequest.from_name', index=3,
+      name='from_name', full_name='pb.EmailRequest.from_name', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='subject', full_name='api.EmailRequest.subject', index=4,
+      name='subject', full_name='pb.EmailRequest.subject', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='body', full_name='api.EmailRequest.body', index=5,
+      name='body', full_name='pb.EmailRequest.body', index=5,
       number=6, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -141,27 +141,27 @@ _EMAILREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=58,
-  serialized_end=177,
+  serialized_start=57,
+  serialized_end=176,
 )
 
 
 _EMAILRESPONSE_HEADERSENTRY = _descriptor.Descriptor(
   name='HeadersEntry',
-  full_name='api.EmailResponse.HeadersEntry',
+  full_name='pb.EmailResponse.HeadersEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='api.EmailResponse.HeadersEntry.key', index=0,
+      name='key', full_name='pb.EmailResponse.HeadersEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='api.EmailResponse.HeadersEntry.value', index=1,
+      name='value', full_name='pb.EmailResponse.HeadersEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -179,33 +179,33 @@ _EMAILRESPONSE_HEADERSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=282,
-  serialized_end=347,
+  serialized_start=280,
+  serialized_end=344,
 )
 
 _EMAILRESPONSE = _descriptor.Descriptor(
   name='EmailResponse',
-  full_name='api.EmailResponse',
+  full_name='pb.EmailResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status_code', full_name='api.EmailResponse.status_code', index=0,
+      name='status_code', full_name='pb.EmailResponse.status_code', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='body', full_name='api.EmailResponse.body', index=1,
+      name='body', full_name='pb.EmailResponse.body', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='headers', full_name='api.EmailResponse.headers', index=2,
+      name='headers', full_name='pb.EmailResponse.headers', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -223,34 +223,34 @@ _EMAILRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=180,
-  serialized_end=347,
+  serialized_start=179,
+  serialized_end=344,
 )
 
 
 _INFERIMAGEREQUEST = _descriptor.Descriptor(
   name='InferImageRequest',
-  full_name='api.InferImageRequest',
+  full_name='pb.InferImageRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='images', full_name='api.InferImageRequest.images', index=0,
+      name='images', full_name='pb.InferImageRequest.images', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='model_name', full_name='api.InferImageRequest.model_name', index=1,
+      name='model_name', full_name='pb.InferImageRequest.model_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='model_version', full_name='api.InferImageRequest.model_version', index=2,
+      name='model_version', full_name='pb.InferImageRequest.model_version', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -268,27 +268,27 @@ _INFERIMAGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=349,
-  serialized_end=439,
+  serialized_start=346,
+  serialized_end=435,
 )
 
 
 _IMAGE = _descriptor.Descriptor(
   name='Image',
-  full_name='api.Image',
+  full_name='pb.Image',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='api.Image.name', index=0,
+      name='name', full_name='pb.Image.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='data', full_name='api.Image.data', index=1,
+      name='data', full_name='pb.Image.data', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -306,20 +306,20 @@ _IMAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=441,
-  serialized_end=476,
+  serialized_start=437,
+  serialized_end=472,
 )
 
 
 _INFERIMAGERESPONSE = _descriptor.Descriptor(
   name='InferImageResponse',
-  full_name='api.InferImageResponse',
+  full_name='pb.InferImageResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='outputs', full_name='api.InferImageResponse.outputs', index=0,
+      name='outputs', full_name='pb.InferImageResponse.outputs', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -337,34 +337,34 @@ _INFERIMAGERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=478,
-  serialized_end=533,
+  serialized_start=474,
+  serialized_end=528,
 )
 
 
 _INFEROUTPUT = _descriptor.Descriptor(
   name='InferOutput',
-  full_name='api.InferOutput',
+  full_name='pb.InferOutput',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='api.InferOutput.name', index=0,
+      name='name', full_name='pb.InferOutput.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='label', full_name='api.InferOutput.label', index=1,
+      name='label', full_name='pb.InferOutput.label', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='probability', full_name='api.InferOutput.probability', index=2,
+      name='probability', full_name='pb.InferOutput.probability', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -382,34 +382,34 @@ _INFEROUTPUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=535,
-  serialized_end=598,
+  serialized_start=530,
+  serialized_end=593,
 )
 
 
 _GANREQUEST = _descriptor.Descriptor(
   name='GanRequest',
-  full_name='api.GanRequest',
+  full_name='pb.GanRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='model_name', full_name='api.GanRequest.model_name', index=0,
+      name='model_name', full_name='pb.GanRequest.model_name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='model_version', full_name='api.GanRequest.model_version', index=1,
+      name='model_version', full_name='pb.GanRequest.model_version', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='count', full_name='api.GanRequest.count', index=2,
+      name='count', full_name='pb.GanRequest.count', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -427,20 +427,20 @@ _GANREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=600,
-  serialized_end=670,
+  serialized_start=595,
+  serialized_end=665,
 )
 
 
 _GANRESPONSE = _descriptor.Descriptor(
   name='GanResponse',
-  full_name='api.GanResponse',
+  full_name='pb.GanResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='images', full_name='api.GanResponse.images', index=0,
+      name='images', full_name='pb.GanResponse.images', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -458,27 +458,27 @@ _GANRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=672,
-  serialized_end=713,
+  serialized_start=667,
+  serialized_end=707,
 )
 
 
 _CHECKPOINT_WEIGHTSENTRY = _descriptor.Descriptor(
   name='WeightsEntry',
-  full_name='api.Checkpoint.WeightsEntry',
+  full_name='pb.Checkpoint.WeightsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='api.Checkpoint.WeightsEntry.key', index=0,
+      name='key', full_name='pb.Checkpoint.WeightsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='api.Checkpoint.WeightsEntry.value', index=1,
+      name='value', full_name='pb.Checkpoint.WeightsEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -496,26 +496,26 @@ _CHECKPOINT_WEIGHTSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=822,
-  serialized_end=883,
+  serialized_start=814,
+  serialized_end=874,
 )
 
 _CHECKPOINT_BIASESENTRY = _descriptor.Descriptor(
   name='BiasesEntry',
-  full_name='api.Checkpoint.BiasesEntry',
+  full_name='pb.Checkpoint.BiasesEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='api.Checkpoint.BiasesEntry.key', index=0,
+      name='key', full_name='pb.Checkpoint.BiasesEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='api.Checkpoint.BiasesEntry.value', index=1,
+      name='value', full_name='pb.Checkpoint.BiasesEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -533,26 +533,26 @@ _CHECKPOINT_BIASESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=885,
-  serialized_end=945,
+  serialized_start=876,
+  serialized_end=935,
 )
 
 _CHECKPOINT = _descriptor.Descriptor(
   name='Checkpoint',
-  full_name='api.Checkpoint',
+  full_name='pb.Checkpoint',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='weights', full_name='api.Checkpoint.weights', index=0,
+      name='weights', full_name='pb.Checkpoint.weights', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='biases', full_name='api.Checkpoint.biases', index=1,
+      name='biases', full_name='pb.Checkpoint.biases', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -570,27 +570,27 @@ _CHECKPOINT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=716,
-  serialized_end=945,
+  serialized_start=710,
+  serialized_end=935,
 )
 
 
 _VARIABLE = _descriptor.Descriptor(
   name='Variable',
-  full_name='api.Variable',
+  full_name='pb.Variable',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='data', full_name='api.Variable.data', index=0,
+      name='data', full_name='pb.Variable.data', index=0,
       number=1, type=2, cpp_type=6, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='size', full_name='api.Variable.size', index=1,
+      name='size', full_name='pb.Variable.size', index=1,
       number=2, type=3, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -608,27 +608,27 @@ _VARIABLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=947,
-  serialized_end=985,
+  serialized_start=937,
+  serialized_end=975,
 )
 
 
 _DATA = _descriptor.Descriptor(
   name='Data',
-  full_name='api.Data',
+  full_name='pb.Data',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='tag', full_name='api.Data.tag', index=0,
+      name='tag', full_name='pb.Data.tag', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='data', full_name='api.Data.data', index=1,
+      name='data', full_name='pb.Data.data', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -646,20 +646,20 @@ _DATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=987,
-  serialized_end=1020,
+  serialized_start=977,
+  serialized_end=1010,
 )
 
 
 _GALLERYREQUEST = _descriptor.Descriptor(
   name='GalleryRequest',
-  full_name='api.GalleryRequest',
+  full_name='pb.GalleryRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='gallery_items', full_name='api.GalleryRequest.gallery_items', index=0,
+      name='gallery_items', full_name='pb.GalleryRequest.gallery_items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -677,48 +677,48 @@ _GALLERYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1022,
-  serialized_end=1079,
+  serialized_start=1012,
+  serialized_end=1068,
 )
 
 
 _GALLERYITEM = _descriptor.Descriptor(
   name='GalleryItem',
-  full_name='api.GalleryItem',
+  full_name='pb.GalleryItem',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='api.GalleryItem.id', index=0,
+      name='id', full_name='pb.GalleryItem.id', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='file_name', full_name='api.GalleryItem.file_name', index=1,
+      name='file_name', full_name='pb.GalleryItem.file_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='title', full_name='api.GalleryItem.title', index=2,
+      name='title', full_name='pb.GalleryItem.title', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='caption', full_name='api.GalleryItem.caption', index=3,
+      name='caption', full_name='pb.GalleryItem.caption', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='bucket_name', full_name='api.GalleryItem.bucket_name', index=4,
+      name='bucket_name', full_name='pb.GalleryItem.bucket_name', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -736,14 +736,14 @@ _GALLERYITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1081,
-  serialized_end=1178,
+  serialized_start=1070,
+  serialized_end=1167,
 )
 
 
 _GALLERYRESPONSE = _descriptor.Descriptor(
   name='GalleryResponse',
-  full_name='api.GalleryResponse',
+  full_name='pb.GalleryResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -760,14 +760,14 @@ _GALLERYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1180,
-  serialized_end=1197,
+  serialized_start=1169,
+  serialized_end=1186,
 )
 
 
 _CONFIGREQUEST = _descriptor.Descriptor(
   name='ConfigRequest',
-  full_name='api.ConfigRequest',
+  full_name='pb.ConfigRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -784,55 +784,55 @@ _CONFIGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1199,
-  serialized_end=1214,
+  serialized_start=1188,
+  serialized_end=1203,
 )
 
 
 _CONFIGRESPONSE = _descriptor.Descriptor(
   name='ConfigResponse',
-  full_name='api.ConfigResponse',
+  full_name='pb.ConfigResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='func_name', full_name='api.ConfigResponse.func_name', index=0,
+      name='func_name', full_name='pb.ConfigResponse.func_name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='code_location', full_name='api.ConfigResponse.code_location', index=1,
+      name='code_location', full_name='pb.ConfigResponse.code_location', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='domain', full_name='api.ConfigResponse.domain', index=2,
+      name='domain', full_name='pb.ConfigResponse.domain', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='bucket_name', full_name='api.ConfigResponse.bucket_name', index=3,
+      name='bucket_name', full_name='pb.ConfigResponse.bucket_name', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='oauth', full_name='api.ConfigResponse.oauth', index=4,
+      name='oauth', full_name='pb.ConfigResponse.oauth', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='jwt_secret', full_name='api.ConfigResponse.jwt_secret', index=5,
+      name='jwt_secret', full_name='pb.ConfigResponse.jwt_secret', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -850,20 +850,20 @@ _CONFIGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1217,
-  serialized_end=1366,
+  serialized_start=1206,
+  serialized_end=1354,
 )
 
 
 _OAUTHREQUEST = _descriptor.Descriptor(
   name='OAuthRequest',
-  full_name='api.OAuthRequest',
+  full_name='pb.OAuthRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='google', full_name='api.OAuthRequest.google', index=0,
+      name='google', full_name='pb.OAuthRequest.google', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -881,27 +881,27 @@ _OAUTHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1368,
-  serialized_end=1423,
+  serialized_start=1356,
+  serialized_end=1410,
 )
 
 
 _GOOGLEOAUTHREQUEST = _descriptor.Descriptor(
   name='GoogleOAuthRequest',
-  full_name='api.GoogleOAuthRequest',
+  full_name='pb.GoogleOAuthRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='client_id', full_name='api.GoogleOAuthRequest.client_id', index=0,
+      name='client_id', full_name='pb.GoogleOAuthRequest.client_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='client_secret', full_name='api.GoogleOAuthRequest.client_secret', index=1,
+      name='client_secret', full_name='pb.GoogleOAuthRequest.client_secret', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -919,48 +919,48 @@ _GOOGLEOAUTHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1425,
-  serialized_end=1487,
+  serialized_start=1412,
+  serialized_end=1474,
 )
 
 
 _GOOGLEOAUTHRESPONSE = _descriptor.Descriptor(
   name='GoogleOAuthResponse',
-  full_name='api.GoogleOAuthResponse',
+  full_name='pb.GoogleOAuthResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='api.GoogleOAuthResponse.id', index=0,
+      name='id', full_name='pb.GoogleOAuthResponse.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='email', full_name='api.GoogleOAuthResponse.email', index=1,
+      name='email', full_name='pb.GoogleOAuthResponse.email', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='verified_email', full_name='api.GoogleOAuthResponse.verified_email', index=2,
+      name='verified_email', full_name='pb.GoogleOAuthResponse.verified_email', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='link', full_name='api.GoogleOAuthResponse.link', index=3,
+      name='link', full_name='pb.GoogleOAuthResponse.link', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='picture', full_name='api.GoogleOAuthResponse.picture', index=4,
+      name='picture', full_name='pb.GoogleOAuthResponse.picture', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -978,8 +978,8 @@ _GOOGLEOAUTHRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1489,
-  serialized_end=1592,
+  serialized_start=1476,
+  serialized_end=1579,
 )
 
 _EMAILRESPONSE_HEADERSENTRY.fields_by_name['value'].message_type = _LISTOFSTRING
@@ -1023,21 +1023,21 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), dict(
   DESCRIPTOR = _EMPTY,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.Empty)
+  # @@protoc_insertion_point(class_scope:pb.Empty)
   ))
 _sym_db.RegisterMessage(Empty)
 
 ListOfString = _reflection.GeneratedProtocolMessageType('ListOfString', (_message.Message,), dict(
   DESCRIPTOR = _LISTOFSTRING,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.ListOfString)
+  # @@protoc_insertion_point(class_scope:pb.ListOfString)
   ))
 _sym_db.RegisterMessage(ListOfString)
 
 EmailRequest = _reflection.GeneratedProtocolMessageType('EmailRequest', (_message.Message,), dict(
   DESCRIPTOR = _EMAILREQUEST,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.EmailRequest)
+  # @@protoc_insertion_point(class_scope:pb.EmailRequest)
   ))
 _sym_db.RegisterMessage(EmailRequest)
 
@@ -1046,12 +1046,12 @@ EmailResponse = _reflection.GeneratedProtocolMessageType('EmailResponse', (_mess
   HeadersEntry = _reflection.GeneratedProtocolMessageType('HeadersEntry', (_message.Message,), dict(
     DESCRIPTOR = _EMAILRESPONSE_HEADERSENTRY,
     __module__ = 'api_pb2'
-    # @@protoc_insertion_point(class_scope:api.EmailResponse.HeadersEntry)
+    # @@protoc_insertion_point(class_scope:pb.EmailResponse.HeadersEntry)
     ))
   ,
   DESCRIPTOR = _EMAILRESPONSE,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.EmailResponse)
+  # @@protoc_insertion_point(class_scope:pb.EmailResponse)
   ))
 _sym_db.RegisterMessage(EmailResponse)
 _sym_db.RegisterMessage(EmailResponse.HeadersEntry)
@@ -1059,42 +1059,42 @@ _sym_db.RegisterMessage(EmailResponse.HeadersEntry)
 InferImageRequest = _reflection.GeneratedProtocolMessageType('InferImageRequest', (_message.Message,), dict(
   DESCRIPTOR = _INFERIMAGEREQUEST,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.InferImageRequest)
+  # @@protoc_insertion_point(class_scope:pb.InferImageRequest)
   ))
 _sym_db.RegisterMessage(InferImageRequest)
 
 Image = _reflection.GeneratedProtocolMessageType('Image', (_message.Message,), dict(
   DESCRIPTOR = _IMAGE,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.Image)
+  # @@protoc_insertion_point(class_scope:pb.Image)
   ))
 _sym_db.RegisterMessage(Image)
 
 InferImageResponse = _reflection.GeneratedProtocolMessageType('InferImageResponse', (_message.Message,), dict(
   DESCRIPTOR = _INFERIMAGERESPONSE,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.InferImageResponse)
+  # @@protoc_insertion_point(class_scope:pb.InferImageResponse)
   ))
 _sym_db.RegisterMessage(InferImageResponse)
 
 InferOutput = _reflection.GeneratedProtocolMessageType('InferOutput', (_message.Message,), dict(
   DESCRIPTOR = _INFEROUTPUT,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.InferOutput)
+  # @@protoc_insertion_point(class_scope:pb.InferOutput)
   ))
 _sym_db.RegisterMessage(InferOutput)
 
 GanRequest = _reflection.GeneratedProtocolMessageType('GanRequest', (_message.Message,), dict(
   DESCRIPTOR = _GANREQUEST,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.GanRequest)
+  # @@protoc_insertion_point(class_scope:pb.GanRequest)
   ))
 _sym_db.RegisterMessage(GanRequest)
 
 GanResponse = _reflection.GeneratedProtocolMessageType('GanResponse', (_message.Message,), dict(
   DESCRIPTOR = _GANRESPONSE,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.GanResponse)
+  # @@protoc_insertion_point(class_scope:pb.GanResponse)
   ))
 _sym_db.RegisterMessage(GanResponse)
 
@@ -1103,19 +1103,19 @@ Checkpoint = _reflection.GeneratedProtocolMessageType('Checkpoint', (_message.Me
   WeightsEntry = _reflection.GeneratedProtocolMessageType('WeightsEntry', (_message.Message,), dict(
     DESCRIPTOR = _CHECKPOINT_WEIGHTSENTRY,
     __module__ = 'api_pb2'
-    # @@protoc_insertion_point(class_scope:api.Checkpoint.WeightsEntry)
+    # @@protoc_insertion_point(class_scope:pb.Checkpoint.WeightsEntry)
     ))
   ,
 
   BiasesEntry = _reflection.GeneratedProtocolMessageType('BiasesEntry', (_message.Message,), dict(
     DESCRIPTOR = _CHECKPOINT_BIASESENTRY,
     __module__ = 'api_pb2'
-    # @@protoc_insertion_point(class_scope:api.Checkpoint.BiasesEntry)
+    # @@protoc_insertion_point(class_scope:pb.Checkpoint.BiasesEntry)
     ))
   ,
   DESCRIPTOR = _CHECKPOINT,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.Checkpoint)
+  # @@protoc_insertion_point(class_scope:pb.Checkpoint)
   ))
 _sym_db.RegisterMessage(Checkpoint)
 _sym_db.RegisterMessage(Checkpoint.WeightsEntry)
@@ -1124,70 +1124,70 @@ _sym_db.RegisterMessage(Checkpoint.BiasesEntry)
 Variable = _reflection.GeneratedProtocolMessageType('Variable', (_message.Message,), dict(
   DESCRIPTOR = _VARIABLE,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.Variable)
+  # @@protoc_insertion_point(class_scope:pb.Variable)
   ))
 _sym_db.RegisterMessage(Variable)
 
 Data = _reflection.GeneratedProtocolMessageType('Data', (_message.Message,), dict(
   DESCRIPTOR = _DATA,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.Data)
+  # @@protoc_insertion_point(class_scope:pb.Data)
   ))
 _sym_db.RegisterMessage(Data)
 
 GalleryRequest = _reflection.GeneratedProtocolMessageType('GalleryRequest', (_message.Message,), dict(
   DESCRIPTOR = _GALLERYREQUEST,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.GalleryRequest)
+  # @@protoc_insertion_point(class_scope:pb.GalleryRequest)
   ))
 _sym_db.RegisterMessage(GalleryRequest)
 
 GalleryItem = _reflection.GeneratedProtocolMessageType('GalleryItem', (_message.Message,), dict(
   DESCRIPTOR = _GALLERYITEM,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.GalleryItem)
+  # @@protoc_insertion_point(class_scope:pb.GalleryItem)
   ))
 _sym_db.RegisterMessage(GalleryItem)
 
 GalleryResponse = _reflection.GeneratedProtocolMessageType('GalleryResponse', (_message.Message,), dict(
   DESCRIPTOR = _GALLERYRESPONSE,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.GalleryResponse)
+  # @@protoc_insertion_point(class_scope:pb.GalleryResponse)
   ))
 _sym_db.RegisterMessage(GalleryResponse)
 
 ConfigRequest = _reflection.GeneratedProtocolMessageType('ConfigRequest', (_message.Message,), dict(
   DESCRIPTOR = _CONFIGREQUEST,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.ConfigRequest)
+  # @@protoc_insertion_point(class_scope:pb.ConfigRequest)
   ))
 _sym_db.RegisterMessage(ConfigRequest)
 
 ConfigResponse = _reflection.GeneratedProtocolMessageType('ConfigResponse', (_message.Message,), dict(
   DESCRIPTOR = _CONFIGRESPONSE,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.ConfigResponse)
+  # @@protoc_insertion_point(class_scope:pb.ConfigResponse)
   ))
 _sym_db.RegisterMessage(ConfigResponse)
 
 OAuthRequest = _reflection.GeneratedProtocolMessageType('OAuthRequest', (_message.Message,), dict(
   DESCRIPTOR = _OAUTHREQUEST,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.OAuthRequest)
+  # @@protoc_insertion_point(class_scope:pb.OAuthRequest)
   ))
 _sym_db.RegisterMessage(OAuthRequest)
 
 GoogleOAuthRequest = _reflection.GeneratedProtocolMessageType('GoogleOAuthRequest', (_message.Message,), dict(
   DESCRIPTOR = _GOOGLEOAUTHREQUEST,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.GoogleOAuthRequest)
+  # @@protoc_insertion_point(class_scope:pb.GoogleOAuthRequest)
   ))
 _sym_db.RegisterMessage(GoogleOAuthRequest)
 
 GoogleOAuthResponse = _reflection.GeneratedProtocolMessageType('GoogleOAuthResponse', (_message.Message,), dict(
   DESCRIPTOR = _GOOGLEOAUTHRESPONSE,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.GoogleOAuthResponse)
+  # @@protoc_insertion_point(class_scope:pb.GoogleOAuthResponse)
   ))
 _sym_db.RegisterMessage(GoogleOAuthResponse)
 
@@ -1198,16 +1198,16 @@ _CHECKPOINT_BIASESENTRY._options = None
 
 _LAMBDA = _descriptor.ServiceDescriptor(
   name='Lambda',
-  full_name='api.Lambda',
+  full_name='pb.Lambda',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1595,
-  serialized_end=1875,
+  serialized_start=1582,
+  serialized_end=1852,
   methods=[
   _descriptor.MethodDescriptor(
     name='Email',
-    full_name='api.Lambda.Email',
+    full_name='pb.Lambda.Email',
     index=0,
     containing_service=None,
     input_type=_EMAILREQUEST,
@@ -1216,7 +1216,7 @@ _LAMBDA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='InferImage',
-    full_name='api.Lambda.InferImage',
+    full_name='pb.Lambda.InferImage',
     index=1,
     containing_service=None,
     input_type=_INFERIMAGEREQUEST,
@@ -1225,7 +1225,7 @@ _LAMBDA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Gan',
-    full_name='api.Lambda.Gan',
+    full_name='pb.Lambda.Gan',
     index=2,
     containing_service=None,
     input_type=_GANREQUEST,
@@ -1234,7 +1234,7 @@ _LAMBDA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Gallery',
-    full_name='api.Lambda.Gallery',
+    full_name='pb.Lambda.Gallery',
     index=3,
     containing_service=None,
     input_type=_GALLERYREQUEST,
@@ -1243,7 +1243,7 @@ _LAMBDA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Config',
-    full_name='api.Lambda.Config',
+    full_name='pb.Lambda.Config',
     index=4,
     containing_service=None,
     input_type=_CONFIGREQUEST,
@@ -1258,16 +1258,16 @@ DESCRIPTOR.services_by_name['Lambda'] = _LAMBDA
 
 _MONITOR = _descriptor.ServiceDescriptor(
   name='Monitor',
-  full_name='api.Monitor',
+  full_name='pb.Monitor',
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=1877,
-  serialized_end=1922,
+  serialized_start=1854,
+  serialized_end=1897,
   methods=[
   _descriptor.MethodDescriptor(
     name='Query',
-    full_name='api.Monitor.Query',
+    full_name='pb.Monitor.Query',
     index=0,
     containing_service=None,
     input_type=_EMPTY,
