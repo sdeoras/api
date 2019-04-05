@@ -14,6 +14,10 @@ service Lambda {
     rpc Gallery(GalleryRequest) returns (GalleryResponse) {}
     // Config fetches config parameters
     rpc Config(ConfigRequest) returns (ConfigResponse) {}
+    // GetUserInfo retrieves user info
+    rpc GetUserInfo(GetUserInfoRequest) returns (GetUserInfoResponse) {}
+    // SetUserInfo sets user info
+    rpc SetUserInfo(SetUserInfoRequest) returns (SetUserInfoResponse) {}
 }
 
 // Monitor service is for clients to request monitor data from the server.
@@ -183,4 +187,40 @@ message GoogleOAuthResponse {
     string link = 4;
     // link to user public picture
     string picture = 5;
+}
+
+message GetUserInfoRequest {
+    UserMeta user_meta = 1;
+}
+
+// GetUserInfoResponse is the information to store per user account
+message GetUserInfoResponse {
+    UserMeta user_meta = 1;
+    // HealthCheckEndPoints is the list of http end points for which user would like to request
+    // health checks
+    HealthCheckEndPoints health_check_end_points = 2;
+}
+
+// SetUserInfoRequest is the information to store per user account
+message SetUserInfoRequest {
+    UserMeta user_meta = 1;
+    // HealthCheckEndPoints is the list of http end points for which user would like to request
+    // health checks
+    HealthCheckEndPoints health_check_end_points = 2;
+}
+
+// SetUserInfoResponse is the response after setting user info.
+message SetUserInfoResponse {}
+
+message UserMeta {
+    // UserName is the user name.
+    string user_name = 1;
+    // UserId is the id for the user.
+    int64 user_id = 2;
+    // UserEmail is the email for the user.
+    string user_email = 3;
+}
+
+message HealthCheckEndPoints {
+    repeated string url = 1;
 }
