@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='pb',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x02pb\"\x07\n\x05\x45mpty\"\x1d\n\x0cListOfString\x12\r\n\x05value\x18\x01 \x03(\t\"w\n\x0c\x45mailRequest\x12\x10\n\x08to_email\x18\x01 \x01(\t\x12\x0f\n\x07to_name\x18\x02 \x01(\t\x12\x12\n\nfrom_email\x18\x03 \x01(\t\x12\x11\n\tfrom_name\x18\x04 \x01(\t\x12\x0f\n\x07subject\x18\x05 \x01(\t\x12\x0c\n\x04\x62ody\x18\x06 \x01(\x0c\"\xa5\x01\n\rEmailResponse\x12\x13\n\x0bstatus_code\x18\x01 \x01(\x03\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12/\n\x07headers\x18\x03 \x03(\x0b\x32\x1e.pb.EmailResponse.HeadersEntry\x1a@\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1f\n\x05value\x18\x02 \x01(\x0b\x32\x10.pb.ListOfString:\x02\x38\x01\"Y\n\x11InferImageRequest\x12\x19\n\x06images\x18\x01 \x03(\x0b\x32\t.pb.Image\x12\x12\n\nmodel_name\x18\x02 \x01(\t\x12\x15\n\rmodel_version\x18\x03 \x01(\t\"#\n\x05Image\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"6\n\x12InferImageResponse\x12 \n\x07outputs\x18\x01 \x03(\x0b\x32\x0f.pb.InferOutput\"?\n\x0bInferOutput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x13\n\x0bprobability\x18\x03 \x01(\x03\"F\n\nGanRequest\x12\x12\n\nmodel_name\x18\x01 \x01(\t\x12\x15\n\rmodel_version\x18\x02 \x01(\t\x12\r\n\x05\x63ount\x18\x03 \x01(\x03\"(\n\x0bGanResponse\x12\x19\n\x06images\x18\x01 \x03(\x0b\x32\t.pb.Image\"\xe1\x01\n\nCheckpoint\x12,\n\x07weights\x18\x01 \x03(\x0b\x32\x1b.pb.Checkpoint.WeightsEntry\x12*\n\x06\x62iases\x18\x02 \x03(\x0b\x32\x1a.pb.Checkpoint.BiasesEntry\x1a<\n\x0cWeightsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.pb.Variable:\x02\x38\x01\x1a;\n\x0b\x42iasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.pb.Variable:\x02\x38\x01\"&\n\x08Variable\x12\x0c\n\x04\x64\x61ta\x18\x01 \x03(\x02\x12\x0c\n\x04size\x18\x02 \x03(\x03\"!\n\x04\x44\x61ta\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"8\n\x0eGalleryRequest\x12&\n\rgallery_items\x18\x01 \x03(\x0b\x32\x0f.pb.GalleryItem\"a\n\x0bGalleryItem\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x11\n\tfile_name\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0f\n\x07\x63\x61ption\x18\x04 \x01(\t\x12\x13\n\x0b\x62ucket_name\x18\x05 \x01(\t\"\x11\n\x0fGalleryResponse\"\x0f\n\rConfigRequest\"\x94\x01\n\x0e\x43onfigResponse\x12\x11\n\tfunc_name\x18\x01 \x01(\t\x12\x15\n\rcode_location\x18\x02 \x01(\t\x12\x0e\n\x06\x64omain\x18\x03 \x01(\t\x12\x13\n\x0b\x62ucket_name\x18\x04 \x01(\t\x12\x1f\n\x05oauth\x18\x05 \x01(\x0b\x32\x10.pb.OAuthRequest\x12\x12\n\njwt_secret\x18\x06 \x01(\t\"6\n\x0cOAuthRequest\x12&\n\x06google\x18\x01 \x01(\x0b\x32\x16.pb.GoogleOAuthRequest\">\n\x12GoogleOAuthRequest\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x15\n\rclient_secret\x18\x02 \x01(\t\"g\n\x13GoogleOAuthResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x16\n\x0everified_email\x18\x03 \x01(\t\x12\x0c\n\x04link\x18\x04 \x01(\t\x12\x0f\n\x07picture\x18\x05 \x01(\t\"5\n\x12GetUserInfoRequest\x12\x1f\n\tuser_meta\x18\x01 \x01(\x0b\x32\x0c.pb.UserMeta\"q\n\x13GetUserInfoResponse\x12\x1f\n\tuser_meta\x18\x01 \x01(\x0b\x32\x0c.pb.UserMeta\x12\x39\n\x17health_check_end_points\x18\x02 \x01(\x0b\x32\x18.pb.HealthCheckEndPoints\"p\n\x12SetUserInfoRequest\x12\x1f\n\tuser_meta\x18\x01 \x01(\x0b\x32\x0c.pb.UserMeta\x12\x39\n\x17health_check_end_points\x18\x02 \x01(\x0b\x32\x18.pb.HealthCheckEndPoints\"\x15\n\x13SetUserInfoResponse\"B\n\x08UserMeta\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\x03\x12\x12\n\nuser_email\x18\x03 \x01(\t\"#\n\x14HealthCheckEndPoints\x12\x0b\n\x03url\x18\x01 \x03(\t2\x92\x03\n\x06Lambda\x12.\n\x05\x45mail\x12\x10.pb.EmailRequest\x1a\x11.pb.EmailResponse\"\x00\x12?\n\nInferImage\x12\x15.pb.InferImageRequest\x1a\x16.pb.InferImageResponse\"\x00(\x01\x12*\n\x03Gan\x12\x0e.pb.GanRequest\x1a\x0f.pb.GanResponse\"\x00\x30\x01\x12\x34\n\x07Gallery\x12\x12.pb.GalleryRequest\x1a\x13.pb.GalleryResponse\"\x00\x12\x31\n\x06\x43onfig\x12\x11.pb.ConfigRequest\x1a\x12.pb.ConfigResponse\"\x00\x12@\n\x0bGetUserInfo\x12\x16.pb.GetUserInfoRequest\x1a\x17.pb.GetUserInfoResponse\"\x00\x12@\n\x0bSetUserInfo\x12\x16.pb.SetUserInfoRequest\x1a\x17.pb.SetUserInfoResponse\"\x00\x32+\n\x07Monitor\x12 \n\x05Query\x12\t.pb.Empty\x1a\x08.pb.Data\"\x00\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\tapi.proto\x12\x02pb\"\x07\n\x05\x45mpty\"\x1d\n\x0cListOfString\x12\r\n\x05value\x18\x01 \x03(\t\"w\n\x0c\x45mailRequest\x12\x10\n\x08to_email\x18\x01 \x01(\t\x12\x0f\n\x07to_name\x18\x02 \x01(\t\x12\x12\n\nfrom_email\x18\x03 \x01(\t\x12\x11\n\tfrom_name\x18\x04 \x01(\t\x12\x0f\n\x07subject\x18\x05 \x01(\t\x12\x0c\n\x04\x62ody\x18\x06 \x01(\x0c\"\xa5\x01\n\rEmailResponse\x12\x13\n\x0bstatus_code\x18\x01 \x01(\x03\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12/\n\x07headers\x18\x03 \x03(\x0b\x32\x1e.pb.EmailResponse.HeadersEntry\x1a@\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1f\n\x05value\x18\x02 \x01(\x0b\x32\x10.pb.ListOfString:\x02\x38\x01\"Y\n\x11InferImageRequest\x12\x19\n\x06images\x18\x01 \x03(\x0b\x32\t.pb.Image\x12\x12\n\nmodel_name\x18\x02 \x01(\t\x12\x15\n\rmodel_version\x18\x03 \x01(\t\"#\n\x05Image\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"6\n\x12InferImageResponse\x12 \n\x07outputs\x18\x01 \x03(\x0b\x32\x0f.pb.InferOutput\"?\n\x0bInferOutput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12\x13\n\x0bprobability\x18\x03 \x01(\x03\"F\n\nGanRequest\x12\x12\n\nmodel_name\x18\x01 \x01(\t\x12\x15\n\rmodel_version\x18\x02 \x01(\t\x12\r\n\x05\x63ount\x18\x03 \x01(\x03\"(\n\x0bGanResponse\x12\x19\n\x06images\x18\x01 \x03(\x0b\x32\t.pb.Image\"\xe1\x01\n\nCheckpoint\x12,\n\x07weights\x18\x01 \x03(\x0b\x32\x1b.pb.Checkpoint.WeightsEntry\x12*\n\x06\x62iases\x18\x02 \x03(\x0b\x32\x1a.pb.Checkpoint.BiasesEntry\x1a<\n\x0cWeightsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.pb.Variable:\x02\x38\x01\x1a;\n\x0b\x42iasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.pb.Variable:\x02\x38\x01\"&\n\x08Variable\x12\x0c\n\x04\x64\x61ta\x18\x01 \x03(\x02\x12\x0c\n\x04size\x18\x02 \x03(\x03\"!\n\x04\x44\x61ta\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"8\n\x0eGalleryRequest\x12&\n\rgallery_items\x18\x01 \x03(\x0b\x32\x0f.pb.GalleryItem\"a\n\x0bGalleryItem\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x11\n\tfile_name\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0f\n\x07\x63\x61ption\x18\x04 \x01(\t\x12\x13\n\x0b\x62ucket_name\x18\x05 \x01(\t\"\x11\n\x0fGalleryResponse\"\x0f\n\rConfigRequest\"\xa8\x01\n\x0e\x43onfigResponse\x12\x11\n\tfunc_name\x18\x01 \x01(\t\x12\x15\n\rcode_location\x18\x02 \x01(\t\x12\x0e\n\x06\x64omain\x18\x03 \x01(\t\x12\x13\n\x0b\x62ucket_name\x18\x04 \x01(\t\x12\x1f\n\x05oauth\x18\x05 \x01(\x0b\x32\x10.pb.OAuthRequest\x12\x12\n\njwt_secret\x18\x06 \x01(\t\x12\x12\n\nproject_id\x18\x07 \x01(\t\"6\n\x0cOAuthRequest\x12&\n\x06google\x18\x01 \x01(\x0b\x32\x16.pb.GoogleOAuthRequest\">\n\x12GoogleOAuthRequest\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x15\n\rclient_secret\x18\x02 \x01(\t\"g\n\x13GoogleOAuthResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x16\n\x0everified_email\x18\x03 \x01(\t\x12\x0c\n\x04link\x18\x04 \x01(\t\x12\x0f\n\x07picture\x18\x05 \x01(\t\"5\n\x12GetUserInfoRequest\x12\x1f\n\tuser_meta\x18\x01 \x01(\x0b\x32\x0c.pb.UserMeta\"q\n\x13GetUserInfoResponse\x12\x1f\n\tuser_meta\x18\x01 \x01(\x0b\x32\x0c.pb.UserMeta\x12\x39\n\x17health_check_end_points\x18\x02 \x01(\x0b\x32\x18.pb.HealthCheckEndPoints\"p\n\x12SetUserInfoRequest\x12\x1f\n\tuser_meta\x18\x01 \x01(\x0b\x32\x0c.pb.UserMeta\x12\x39\n\x17health_check_end_points\x18\x02 \x01(\x0b\x32\x18.pb.HealthCheckEndPoints\"\x15\n\x13SetUserInfoResponse\"B\n\x08UserMeta\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\x03\x12\x12\n\nuser_email\x18\x03 \x01(\t\"#\n\x14HealthCheckEndPoints\x12\x0b\n\x03url\x18\x01 \x03(\t2\x92\x03\n\x06Lambda\x12.\n\x05\x45mail\x12\x10.pb.EmailRequest\x1a\x11.pb.EmailResponse\"\x00\x12?\n\nInferImage\x12\x15.pb.InferImageRequest\x1a\x16.pb.InferImageResponse\"\x00(\x01\x12*\n\x03Gan\x12\x0e.pb.GanRequest\x1a\x0f.pb.GanResponse\"\x00\x30\x01\x12\x34\n\x07Gallery\x12\x12.pb.GalleryRequest\x1a\x13.pb.GalleryResponse\"\x00\x12\x31\n\x06\x43onfig\x12\x11.pb.ConfigRequest\x1a\x12.pb.ConfigResponse\"\x00\x12@\n\x0bGetUserInfo\x12\x16.pb.GetUserInfoRequest\x1a\x17.pb.GetUserInfoResponse\"\x00\x12@\n\x0bSetUserInfo\x12\x16.pb.SetUserInfoRequest\x1a\x17.pb.SetUserInfoResponse\"\x00\x32+\n\x07Monitor\x12 \n\x05Query\x12\t.pb.Empty\x1a\x08.pb.Data\"\x00\x30\x01\x62\x06proto3')
 )
 
 
@@ -838,6 +838,13 @@ _CONFIGRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='project_id', full_name='pb.ConfigResponse.project_id', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -851,7 +858,7 @@ _CONFIGRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1206,
-  serialized_end=1354,
+  serialized_end=1374,
 )
 
 
@@ -881,8 +888,8 @@ _OAUTHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1356,
-  serialized_end=1410,
+  serialized_start=1376,
+  serialized_end=1430,
 )
 
 
@@ -919,8 +926,8 @@ _GOOGLEOAUTHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1412,
-  serialized_end=1474,
+  serialized_start=1432,
+  serialized_end=1494,
 )
 
 
@@ -978,8 +985,8 @@ _GOOGLEOAUTHRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1476,
-  serialized_end=1579,
+  serialized_start=1496,
+  serialized_end=1599,
 )
 
 
@@ -1009,8 +1016,8 @@ _GETUSERINFOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1581,
-  serialized_end=1634,
+  serialized_start=1601,
+  serialized_end=1654,
 )
 
 
@@ -1047,8 +1054,8 @@ _GETUSERINFORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1636,
-  serialized_end=1749,
+  serialized_start=1656,
+  serialized_end=1769,
 )
 
 
@@ -1085,8 +1092,8 @@ _SETUSERINFOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1751,
-  serialized_end=1863,
+  serialized_start=1771,
+  serialized_end=1883,
 )
 
 
@@ -1109,8 +1116,8 @@ _SETUSERINFORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1865,
-  serialized_end=1886,
+  serialized_start=1885,
+  serialized_end=1906,
 )
 
 
@@ -1154,8 +1161,8 @@ _USERMETA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1888,
-  serialized_end=1954,
+  serialized_start=1908,
+  serialized_end=1974,
 )
 
 
@@ -1185,8 +1192,8 @@ _HEALTHCHECKENDPOINTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1956,
-  serialized_end=1991,
+  serialized_start=1976,
+  serialized_end=2011,
 )
 
 _EMAILRESPONSE_HEADERSENTRY.fields_by_name['value'].message_type = _LISTOFSTRING
@@ -1462,8 +1469,8 @@ _LAMBDA = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1994,
-  serialized_end=2396,
+  serialized_start=2014,
+  serialized_end=2416,
   methods=[
   _descriptor.MethodDescriptor(
     name='Email',
@@ -1540,8 +1547,8 @@ _MONITOR = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=2398,
-  serialized_end=2441,
+  serialized_start=2418,
+  serialized_end=2461,
   methods=[
   _descriptor.MethodDescriptor(
     name='Query',
