@@ -8,6 +8,7 @@ import (
 
 const (
 	FunctionName        = "FUNCTION_NAME"
+	ProjectId           = "GOOGLE_PROJECT_ID"
 	GoogleGCFDomain     = "GOOGLE_GCF_DOMAIN"
 	GoogleClientId      = "GOOGLE_CLIENT_ID"
 	GoogleClientSecret  = "GOOGLE_CLIENT_SECRET"
@@ -19,8 +20,9 @@ const (
 // NewConfigFromEnv builds config response from environment variables
 func NewConfigFromEnv() *pb.ConfigResponse {
 	return &pb.ConfigResponse{
-		FuncName: os.Getenv(FunctionName),
-		Domain:   os.Getenv(GoogleGCFDomain),
+		FuncName:  os.Getenv(FunctionName),
+		ProjectId: os.Getenv(ProjectId),
+		Domain:    os.Getenv(GoogleGCFDomain),
 		Oauth: &pb.OAuthRequest{
 			Google: &pb.GoogleOAuthRequest{
 				ClientId:     os.Getenv(GoogleClientId),
