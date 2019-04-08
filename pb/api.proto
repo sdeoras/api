@@ -159,6 +159,9 @@ message ConfigResponse {
 
     // jwt secret passphrase
     string jwt_secret = 6;
+
+    // google cloud project id
+    string project_id = 7;
 }
 
 // OAuthRequest is a collection of all supported oauth providers
